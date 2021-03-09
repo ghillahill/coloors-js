@@ -6,10 +6,13 @@ const sliders = document.querySelectorAll('input[type="range"]');
 const currentHexes = document.querySelectorAll('.color h2');
 const generateButton = document.querySelector('.generate');
 const popup = document.querySelector('.copy-container');
+const adjustButton = document.querySelectorAll('.adjust');
+const closeAdjustButton = document.querySelectorAll('.close-adjustment');
+const sliderContainers = document.querySelectorAll('.sliders');
 let initialColors;
 
 
-//Event Listeners
+//EVENT LISTENERS
 sliders.forEach(slider => {
     slider.addEventListener("input", getHslControls);
 });
@@ -34,9 +37,20 @@ popup.addEventListener('transitionend', () => {
     popupBox.classList.remove('active');
 });
 
+adjustButton.forEach((button,index) => {
+    button.addEventListener('click', () => {
+        openAdjustmentPanel(index);
+    });
+});
+
+closeAdjustButton.forEach((button,index) => {
+    button.addEventListener('click', () => {
+        closeAdjustmentPanel(index);
+    });
+});
 
 
-//Functions
+//FUNCTIONS
 
 //Hex Color Generator with Chroma JS library
 function getHex() {
@@ -147,5 +161,12 @@ function copyToClipboard(hex) {
     popupBox.classList.add('active');       
 }
 
+function openAdjustmentPanel(index) {
+    sliderContainers[index].classList.toggle('active');
+}
+
+function closeAdjustmentPanel(index) {
+    sliderContainers[index].classList.remove('active');
+}
 
 getRandomColors()
