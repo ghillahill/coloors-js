@@ -85,6 +85,9 @@ function getHslControls(e) {
     let color = chroma(bgColor).set('hsl.s', saturation.value).set('hsl.l', brightness.value).set('hsl.h', hue.value);
 
     colorDivs[index].style.backgroundColor = color;
+
+    //Update Sliders Color
+    getColorSlider(color, hue, brightness, saturation);
 }
 
 function updateTextUi(index) {
