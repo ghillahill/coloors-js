@@ -42,6 +42,7 @@ path, i, svg {
     color: rgb(73,73,73);
     padding: 0.6rem;
     border-radius: 0.5rem;
+    box-shadow: 0 8px 8px -6px rgba(0,0,0,.25);
 }
 
 .sliders {
@@ -56,7 +57,7 @@ path, i, svg {
     width: 80%;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
-    pointer-events: none;
+    /* pointer-events: none; */
     /* Adjustment class */
     /* transform: translateY(100px); */
     transition: all 0.5s ease-in-out;
@@ -121,4 +122,16 @@ path, i, svg {
     background: none;
     cursor: pointer;
     margin: 2rem 0rem;
+}
+
+/* Slider Style */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
 }
