@@ -109,6 +109,14 @@ path, i, svg {
     box-shadow: 0 8px 8px -6px rgba(0,0,0,.25);
 }
 
+.adjust:focus, .lock:focus {
+    outline: none;
+}
+
+.adjust:hover, .lock:hover {
+    transform: scale(1.1);
+}
+
 .panel {
     display: flex;
     align-items: center;
